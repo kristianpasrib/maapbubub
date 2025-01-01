@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Minta Maaf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .button-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #maapin {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #maapin:hover {
+            background-color: #45a049;
+        }
+
+        #gamau {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+
+        #gamau:hover {
+            background-color: #e53935;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            const button = document.getElementById('gamau');
+            const container = document.querySelector('.button-container');
+            const containerRect = container.getBoundingClientRect();
+
+            const newX = Math.random() * (containerRect.width - button.offsetWidth);
+            const newY = Math.random() * (containerRect.height - button.offsetHeight);
+
+            button.style.left = `${newX}px`;
+            button.style.top = `${newY}px`;
+        }
+
+        function redirectToApology() {
+            alert("Maaaciiiwwww caca cayaanggg udaahhh maapiinnn akuuuuuhhhh 😊 lovee youuuu sooo mucchhhh ❤️");
+            window.location.href = "apology.html"; // Ganti dengan halaman teks minta maaf
+        }
+    </script>
+</head>
+<body>
+    <h1>Sayang, maafin aku ya ❤️</h1>
+    <div class="button-container" style="width: 300px; height: 200px;">
+        <button id="maapin" onclick="redirectToApology()">Maapin</button>
+        <button id="gamau" onmouseover="moveButton()">Gamau</button>
+    </div>
+</body>
+</html>
